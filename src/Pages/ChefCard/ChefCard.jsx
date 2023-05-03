@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const ChefCard = ({ info }) => {
   const { name, picture, experience_years, recipe_count, likes, id } = info;
   return (
-<div className="card card-side bg-base-100 shadow-xl">
+<div className="card card-side bg-base-100 border-2">
       <figure>
         <img
           className="w-full h-64 object-cover object-center"
@@ -15,7 +15,7 @@ const ChefCard = ({ info }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Name: {name}</h2>
+        <h2 className="card-title">{name}</h2>
         <p>Experience: {experience_years} years</p>
         <p>Total Recipe: {recipe_count}</p>
         <div className="flex">Like: {likes} <FontAwesomeIcon icon={faHeart} /> </div>
