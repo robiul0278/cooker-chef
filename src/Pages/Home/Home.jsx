@@ -29,15 +29,17 @@ const Home = () => {
             className="md:max-w-xl max-w-sm rounded-lg shadow-2xl"
           />
           <div className="p-5">
-            <h1 className="text-3xl font-bold">Chef support – for chefs by chefs</h1>
+            <h1 className="text-3xl text-blue-600 font-bold">Chef support – for chefs by chefs</h1>
             <p className="py-3 text-justify font-semibold">
-            <a className=" text-orange-600 font-extrabold">Unilever Food Solutions</a> is a business built by Chefs, so we know what you face every day in the kitchen. Everything we do is focused on making your life a little easier. We aim to inspire you, train you and provide you with the best product solutions.
+            <a className=" text-orange-600 font-extrabold">Unilever Food Solutions</a> is a business built by Chefs, so we know what you face every day in the kitchen. Everything we do is focused on making your life a little easier. <spa className=" font-extrabold">We aim to inspire you</spa>, train you and provide you with the best product solutions.
             </p>
+
             <p className="py-3 text-justify font-semibold">
-            Drawing from their extensive experience in <span className=" font-extrabold">professional food services</span> , our team of over <a className=" text-orange-600 font-extrabold">300 Chefs</a> create dish solutions that balance great taste, convenience and nutrition with a consistently high standard.
+            Our <span className=" font-extrabold">global network</span> of food service professionals help source the best sustainable ingredients, develop quality products, create inspiring & <span className=" text-orange-600 font-extrabold">trending recipes</span>, and provide chef training and support. 
             </p>
+
             <p className="py-3 text-justify font-semibold">
-            Our global network of food service professionals help source the best sustainable ingredients, develop quality products, create inspiring & <span className=" text-orange-600 font-extrabold">trending recipes</span>, and provide chef training and support. 
+            Drawing from their extensive experience in <span className=" font-extrabold">professional food services</span> , our team of over <a className=" text-orange-600 font-extrabold">354 Chefs</a> create dish solutions that balance great taste, convenience and nutrition with a consistently high standard.
             </p>
           </div>
         </div>
@@ -59,7 +61,7 @@ const Home = () => {
         Brands
         </h1>
       </div>
-      <div className="grid p-14 grid-cols-3 md:grid-cols-7">
+      <div className="grid p-14 grid-cols-3 md:grid-cols-7 border-2">
         <div> <img src="https://rb.gy/8oah3" alt="" /></div>
         <div> <img src="https://rb.gy/2d84a" alt="" /></div>
         <div> <img src="https://rb.gy/0yr82" alt="" /></div>
