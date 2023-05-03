@@ -13,6 +13,3 @@ module.exports = {
     'react-refresh/only-export-components': '',
   },
 }
-
-
-// 'react-refresh/only-export-components': 'worn',========================
