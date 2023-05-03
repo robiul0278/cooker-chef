@@ -26,7 +26,7 @@ const RecipeDetails = () => {
       <p className="py-6">{recipe[0].bio}</p>
       <p>Experience: {recipe[0].experience_years} years</p>
         <p>Total Recipe: {recipe[0].recipe_count}</p>
-        <div className="flex align-middle">Total Like: {recipe[0].likes} <FontAwesomeIcon icon={faHeart} /> </div>
+        <div className="flex align-middle">Like: {recipe[0].likes} <FontAwesomeIcon icon={faHeart} /> </div>
     </div>
   </div>
 </div>
