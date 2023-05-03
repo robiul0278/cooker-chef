@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -12,14 +13,12 @@ const Hero = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content py-40">
           <div className="max-w-md">
-            <h1 className="mb-5 text-xl font-bold">Ingredients for Success</h1>
-            <h1 className="mb-5 text-4xl font-bold">All You Need to Grow Your Food Business</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+            <h1 className="mb-5 text-2xl font-bold">Ingredients for Success</h1>
+            <h1 className="mb-5 text-5xl font-bold">All You Need to Grow Your Food Business</h1>
+            <p className="mb-5 font-semibold">
+            Chef Academy is located in the centre of London. Our <span className="font-bold">expert chefs</span> train and educate students with traditional methods of cuisine. They are the most modern and creative cooking techniques!
             </p>
-            <button className="btn btn-primary">Get Started</button>
+            <Link to='/' className="btn btn-primary">Get Started</Link>
           </div>
         </div>
       </div>
