@@ -73,7 +73,7 @@ const Login = () => {
     <div className="hero p-14 bg-base-200">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-5xl p-14 font-bold">Login now!</h1>
+          <h1 className="text-5xl p-14 font-bold">Login now!!</h1>
         </div>
         <form
           onSubmit={handleLogin}
@@ -87,7 +87,7 @@ const Login = () => {
               <input
                 name="email"
                 type="email"
-                placeholder="email"
+                placeholder="Your email"
                 className="input input-bordered"
                 required
               />
@@ -99,7 +99,7 @@ const Login = () => {
               <input
                 name="password"
                 type="password"
-                placeholder="password"
+                placeholder="Your password"
                 className="input input-bordered"
                 required
               />
