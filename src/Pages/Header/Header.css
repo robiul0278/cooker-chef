@@ -14,11 +14,17 @@
     color: #fff;
 }
 
+
 .title-logo{
-    background-color: #007bff;
-    color: #fff;
+    background-color: #8f5656;
+    color: #ffffff;
 }
 .title-logo:hover{
-    background-color: #007bff;
-    color: #f0b30d;
+    background-color: #d48c8c;
+    color: #ffffff;
+}
+
+.nav-bg{
+    margin-bottom: 4px;
+    background-color: #d48c8c;
 }

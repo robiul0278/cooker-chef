@@ -76,7 +76,7 @@ const Login = () => {
     });
   };
   return (
-    <div className="hero md:p-14 bg-base-200">
+    <div className="hero container mx-auto md:p-14 bg-base-200">
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="md:text-5xl text-4xl md:p-14 font-bold">Login now!!</h1>

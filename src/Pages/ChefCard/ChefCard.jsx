@@ -11,7 +11,7 @@ const ChefCard = ({ info }) => {
 <div className="card card-side bg-base-100 shadow-xl">
       <figure>
         <LazyLoadImage
-          className="w-full h-64 p-2 object-cover object-center"
+          className="w-full h-64 p-2 object-cover rounded object-center"
           src={picture}
           alt="Movie"
           effect="blur"

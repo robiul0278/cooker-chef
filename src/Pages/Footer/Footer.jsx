@@ -5,7 +5,7 @@ const Footer = () => {
     <section className="mt-5 bg-neutral text-neutral-content">
       <footer className="grid md:grid-cols-4 container mx-auto footer p-10">
       <div className="md:mr-10" >
-          <h2 className=" font-bold text-4xl">COOKER_TEN</h2>
+          <h2 className=" font-bold text-4xl">COOKER</h2>
           <p>
            Chef Academy London was founded in 2007 and since then has led the way for professional training for head chefs, pastry chefs and restaurant managers. Book an appointment with one of our expert advisors for more information.
           </p>
