@@ -1,23 +1,27 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
-import { GithubAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GithubAuthProvider, getAuth, onAuthStateChanged, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const Login = () => {
-  const [error, setError] = useState('')
+  const [error, setError,] = useState('')
+  const [user, setUser] = useState();
+  const [loading, setLoading] = useState(true);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const GitProvider = new GithubAuthProvider();
-  const {signIn,} = useContext(AuthContext);
+  const {signIn, google} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  let from = location.state?.from?.pathname || "/";
+
 
 
   // Google Login ==========================
@@ -27,6 +31,7 @@ const Login = () => {
     .then((result) => {
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const user = result.user;
+      navigate(from, {replace: true})
       console.log(user)
     }).catch((error) => {
       const errorCode = error.code;
@@ -42,6 +47,7 @@ const Login = () => {
   .then((result) => {
     const credential = GithubAuthProvider.credentialFromResult(result);
     const token = credential.accessToken;
+    navigate(from, {replace: true})
 
     const user = result.user;
   }).catch((error) => {

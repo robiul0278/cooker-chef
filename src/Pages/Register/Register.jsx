@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
   const [error, setError] = useState('')
-const {createUser, logOut} = useContext(AuthContext);
+const {createUser, logOut, profileUpdate} = useContext(AuthContext);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const GitProvider = new GithubAuthProvider();
@@ -75,6 +75,11 @@ const handleRegister = event => {
     console.log(user)
     setError('')
     toast("registration successfully!")
+    profileUpdate(name, photo)
+    .then(()=> {
+      console.log("profile updated");
+    })
+    .catch(error => console.log(error))
     
   })
   .catch((error) => {
