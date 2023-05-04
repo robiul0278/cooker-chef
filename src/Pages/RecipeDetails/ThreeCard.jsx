@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Rating from "react-rating";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Rating } from '@smastrom/react-rating'
+import '@smastrom/react-rating/style.css'
 
 const ThreeCard = ({ card }) => {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -21,16 +22,11 @@ const ThreeCard = ({ card }) => {
           {ingredients.map((m) => (
             <li>{m}</li>
           ))}
-          <Rating>
-            placeholderRating={rating}
-            readonly
-            emptySymbol=
-            {<FaRegStar></FaRegStar>}
-            placeholderSymbol=
-            {<FaStar></FaStar>}
-            fullSymbol=
-            {<FaStar></FaStar>}
-          </Rating>
+         <div className="flex">
+          <span>Rating: </span>
+         <Rating style={{ maxWidth: 100 }} value={rating} readOnly /> 
+         <span>{rating}</span>
+         </div>
           <div className="card-actions justify-end">
             <button onClick={handleTost} disabled={isButtonDisabled} className="btn btn-primary">Favorite</button>
             <ToastContainer

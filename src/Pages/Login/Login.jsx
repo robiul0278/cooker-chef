@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -6,12 +6,15 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { GithubAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+  const [error, setError] = useState('')
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const GitProvider = new GithubAuthProvider();
-  const {signIn} = useContext(AuthContext);
+  const {signIn,} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
@@ -61,23 +64,26 @@ const Login = () => {
     signIn(email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      // console.log(user);
+      toast("Login successfully!")
       navigate(from, {replace: true})
+      setError('')
+
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      setError(errorMessage);
     });
   };
   return (
-    <div className="hero p-14 bg-base-200">
+    <div className="hero md:p-14 bg-base-200">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-5xl p-14 font-bold">Login now!!</h1>
+          <h1 className="md:text-5xl text-4xl md:p-14 font-bold">Login now!!</h1>
         </div>
         <form
           onSubmit={handleLogin}
-          className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100"
+          className="card flex-shrink-0 w-80 md:w-full max-w-md shadow-2xl bg-base-100"
         >
           <div className="card-body">
             <div className="form-control">
@@ -104,8 +110,8 @@ const Login = () => {
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
+                <a href="#" className=" text-orange-500">
+                  {error}
                 </a>
               </label>
             </div>
@@ -117,11 +123,11 @@ const Login = () => {
               <h2 className="font-semibold pb-4">
                 Login easily with your Google or GitHub account
               </h2>
-              <div className="gap-5 flex">
-                <button onClick={handleGoogle} className="btn bg-white hover:bg-gray-400 text-black w-44">
+              <div className="gap-5 justify-center align-middle flex">
+                <button onClick={handleGoogle} className="btn bg-white hover:bg-gray-400 text-black md:w-44">
                   <FcGoogle className="mr-2"></FcGoogle> Google
                 </button>
-                <button onClick={handleGit} className="btn w-44 hover:bg-gray-400 bg-slate-600">
+                <button onClick={handleGit} className="btn md:w-44 hover:bg-gray-400 bg-slate-600">
                   <FaGithub className="mr-2"></FaGithub> GitHub
                 </button>
               </div>

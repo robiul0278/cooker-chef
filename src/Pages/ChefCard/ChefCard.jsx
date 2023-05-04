@@ -11,16 +11,16 @@ const ChefCard = ({ info }) => {
 <div className="card card-side bg-base-100 shadow-xl">
       <figure>
         <LazyLoadImage
-          className="w-full h-64 object-cover object-center"
+          className="w-full h-64 p-2 object-cover object-center"
           src={picture}
           alt="Movie"
           effect="blur"
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Name: {name}</h2>
+        <h2 className="card-title">{name}</h2>
         <p>Experience: {experience_years} years</p>
-        <p>Total Recipe: {recipe_count}</p>
+        <p>Recipe: {recipe_count}</p>
         <div className="flex">Like: {likes} <FontAwesomeIcon icon={faHeart} /> </div>
         <div className="card-actions justify-end">
           <Link to={`/recipes/${id}`} className="btn btn-primary">View Recipes</Link>

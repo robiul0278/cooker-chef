@@ -18,7 +18,7 @@ const Hero = () => {
             <p className="mb-5 font-semibold">
             Chef Academy is located in the centre of London. Our <span className="font-bold">expert chefs</span> train and educate students with traditional methods of cuisine. They are the most modern and creative cooking techniques!
             </p>
-            <Link to='/' className="btn btn-primary">Get Started</Link>
+            <Link to='/register' className="btn btn-primary">Get Started</Link>
           </div>
         </div>
       </div>

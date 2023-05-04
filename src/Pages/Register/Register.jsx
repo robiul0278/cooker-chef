@@ -1,16 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, Navigate, useLoaderData, useLocation } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
-const {createUser} = useContext(AuthContext);
+  const [error, setError] = useState('')
+const {createUser, logOut} = useContext(AuthContext);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const GitProvider = new GithubAuthProvider();
+const location = useLocation();
 
 
   // Google Login ==========================
@@ -49,6 +54,7 @@ const GitProvider = new GithubAuthProvider();
 
 const handleRegister = event => {
   event.preventDefault();
+  setError('')
   const form = event.target;
   const name = form.name.value;
   const photo = form.photo.value;
@@ -56,18 +62,27 @@ const handleRegister = event => {
   const password = form.password.value;
   console.log(name, photo, email , password)
   form.reset();
+  
+  // if(!(password.length <6)){
+  //   setError('password is less than 6 characters')
+  //   return;
+  // }
 
   createUser(email, password)
   .then(userCredential => {
     const user = userCredential.user;
+    logOut();
     console.log(user)
+    setError('')
+    toast("registration successfully!")
+    
   })
   .catch((error) => {
-    const errorCode = error.code;
     const errorMessage = error.message;
+    setError(errorMessage);
   });
 
-  
+
 }
 
   return (
@@ -121,9 +136,11 @@ const handleRegister = event => {
                 type="password"
                 placeholder="password"
                 className="input input-bordered"
+                required
 
               />
             </div>
+            <p className=" text-orange-800">{error}</p>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
@@ -143,6 +160,7 @@ const handleRegister = event => {
             </div>
           </div>
         </form>
+
         <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
           <div className="text-center card-body">
             <span>
@@ -154,6 +172,7 @@ const handleRegister = event => {
           </div>
         </div>
       </div>
+      <ToastContainer/>
     </div>
   );
 };

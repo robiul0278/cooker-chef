@@ -7,10 +7,12 @@ import Blog from "../Pages/Blog/Blog";
 import ChefMain from "../Layouts/ChefMain";
 import RecipeDetails from "../Pages/RecipeDetails/RecipeDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <Main></Main>,
         children: [
             {
@@ -33,12 +35,13 @@ const router = createBrowserRouter([
     },
     {
         path: 'recipes',
+        errorElement: <ErrorPage></ErrorPage>,
         element: <PrivateRoute><ChefMain></ChefMain></PrivateRoute>,
         children: [
             {
                 path: ':id',
                 element: <RecipeDetails></RecipeDetails>,
-                loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+                loader: ({params}) => fetch(`https://cooker-server-sbrobiulislam1212-gmailcom.vercel.app/details/${params.id}`)
             }
         ]
     }

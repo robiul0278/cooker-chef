@@ -9,7 +9,7 @@ const RecipeDetails = () => {
   const [details, setDetails] = useState([]);
   console.log(details)
       useEffect(() => {
-          fetch('http://localhost:5000/card')
+          fetch('https://cooker-server-sbrobiulislam1212-gmailcom.vercel.app/card')
           .then(res => res.json())
           .then(data => setDetails(data))
           .catch(error => console.log(error))
