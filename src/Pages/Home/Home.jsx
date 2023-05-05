@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ChefCard from "../ChefCard/ChefCard";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../../index.css'
 
 const Home = () => {
   const [details, setDetails] = useState([]);
@@ -15,22 +16,23 @@ const Home = () => {
       .catch((error) => console.log(error));
   }, []);
   return (
-    <div className="container mx-auto">
+    <div className="">
       <Hero></Hero>
       <ToastContainer/>
-      <div>
-        <h1 className="text-center text-blue-600 md:py-14 p-2 font-bold md:text-6xl text-4xl">
+      <div className="py-14">
+      <h2 className="sub-title text-center">Ingredients for Success</h2>
+        <h1 className="text-center  p-2 font-bold font-title text-4xl">
           We are UFS. We support Chefs.
         </h1>
       </div>
-      <div className="hero bg-base-200 md:py-14">
+      <div className="hero bg-white md:py-14">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
             src="https://rb.gy/kjptx"
-            className="md:max-w-xl w-80 m-2 rounded-lg shadow-2xl"
+            className="md:max-w-xl sm:max-w-xs m-2 rounded-lg shadow-2xl"
           />
           <div className="">
-            <h1 className="text-3xl text-center text-blue-600 p-2 font-bold">
+            <h1 className=" text-center text-2xl p-2 font-bold">
               Chef support – for chefs by chefs
             </h1>
             <p className="py-3 text-justify font-semibold">
@@ -68,22 +70,23 @@ const Home = () => {
         </div>
       </div>
 
-      <div>
-        <h1 className="text-center text-blue-600 py-14  font-bold md:text-6xl text-4xl">
-          Our Experts
+      <div className="pt-14">
+      <h2 className="sub-title text-center">SELECT your Chef</h2>
+        <h1 className="text-center font-title">
+        Explore Popular Chef
         </h1>
       </div>
-      <div className="grid sm:grid-cols-2 p-5 md:grid-cols-3 lg:grid-cols-3 grid-cols-1 gap-8">
+      <div className="grid sm:grid-cols-2 md:px-40 p-5 py-14 md:grid-cols-3 lg:grid-cols-3 grid-cols-1 gap-5 container mx-auto">
         {details.map((info) => (
           <ChefCard key={info.id} info={info}></ChefCard>
         ))}
       </div>
-      <div>
-        <h1 className="text-center text-blue-600 py-14 font-bold md:text-6xl text-4xl">
-          Brands
+      <div className="">
+        <h1 className="text-center text-blue-600 pt-14 font-title">
+        PRODUCT CATALOG BRANDS
         </h1>
       </div>
-      <div className="grid p-14 grid-cols-3 md:grid-cols-7 border-2">
+      <div className="grid container mx-auto my-14 p-14 grid-cols-3 md:grid-cols-7 border-2 bg-white">
         <div>
           {" "}
           <img src="https://rb.gy/8oah3" alt="" />

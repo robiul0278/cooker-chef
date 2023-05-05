@@ -14,8 +14,8 @@ const ThreeCard = ({ card }) => {
   // console.log(card);
   const { name, ingredients, cooking_method, rating } = card;
   return (
-    <div>
-      <div className="card  bg-base-100 shadow-xl">
+    <div className=" p-2">
+      <div className="card bg-white h-full shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{name}</h2>
           <p>{cooking_method}</p>

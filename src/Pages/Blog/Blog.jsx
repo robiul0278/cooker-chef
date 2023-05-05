@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import Header from '../Header/Header';
 
 const Blog = () => {
   const screenshotRef = useRef(null);
@@ -14,10 +15,11 @@ const Blog = () => {
     });
   };
   return (
-    <div className="container mx-auto">
+    <div className=''>
+      <div className="container mx-auto">
       <button className="btn" onClick={handleDownload}>Download PDF</button>
         <page>
-          <div  ref={screenshotRef} className="container mx-auto ">
+          <div  ref={screenshotRef} className="">
           
             <div>
               <h1 className="text-center my-14 font-bold text-5xl">
@@ -96,6 +98,7 @@ const Blog = () => {
             </div>
           </div>
         </page>
+    </div>
     </div>
   );
 };

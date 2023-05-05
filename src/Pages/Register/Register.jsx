@@ -91,12 +91,12 @@ const handleRegister = event => {
 }
 
   return (
-    <div className="hero p-14 bg-base-200">
+    <div className="hero py-7">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="text-5xl p-14 font-bold">Please Register!</h1>
+          <h1 className="text-5xl pb-7 font-bold">Please Register!</h1>
         </div>
-        <form onSubmit={handleRegister} className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+        <form onSubmit={handleRegister} className="card flex-shrink-0 w-full p-2 bg-white max-w-md shadow-2xl">
           <div className="card-body">
             <div className="form-control">
               <label className="label">
@@ -155,10 +155,10 @@ const handleRegister = event => {
                 Login easily with your Google or GitHub account
               </h2>
               <div className="gap-5 flex">
-                <button onClick={handleGoogle} className="btn bg-white hover:bg-gray-400 text-black w-44">
+              <button onClick={handleGoogle} className="btn bg-white hover:bg-gray-400 text-black md:w-44">
                   <FcGoogle className="mr-2"></FcGoogle> Google
                 </button>
-                <button onClick={handleGit} className="btn w-44 hover:bg-gray-400 bg-slate-600">
+                <button onClick={handleGit} className="btn md:w-44 hover:bg-gray-400 bg-slate-600">
                   <FaGithub className="mr-2"></FaGithub> GitHub
                 </button>
               </div>
@@ -169,7 +169,7 @@ const handleRegister = event => {
         <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
           <div className="text-center card-body">
             <span>
-              You have already account ?
+              You have already account? 
               <Link to="/login" className=" text-blue-600">
                 Login here
               </Link>{" "}

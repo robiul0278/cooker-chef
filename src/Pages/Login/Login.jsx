@@ -82,14 +82,14 @@ const Login = () => {
     });
   };
   return (
-    <div className="hero container mx-auto md:p-14 bg-base-200">
+    <div className="hero">
       <div className="hero-content flex-col">
         <div className="text-center">
-          <h1 className="md:text-5xl text-4xl md:p-14 font-bold">Login now!!</h1>
+          <h1 className="md:text-5xl text-4xl md:py-7 font-bold">Login now!!</h1>
         </div>
         <form
           onSubmit={handleLogin}
-          className="card flex-shrink-0 w-80 md:w-full max-w-md shadow-2xl bg-base-100"
+          className="card bg-white p-2 flex-shrink-0 w-full md:w-full max-w-md shadow-2xl"
         >
           <div className="card-body">
             <div className="form-control">
@@ -140,12 +140,12 @@ const Login = () => {
             </div>
           </div>
         </form>
-        <div className="card flex-shrink-0 w-full max-w-md shadow-2xl bg-base-100">
+        <div className="card flex-shrink-0 mb-7 w-full max-w-md shadow-2xl bg-base-100">
           <div className="text-center card-body">
             <div>
-              New to Cooker Ten ?
+              New to Cooker Ten? 
               <Link to="/register" className=" text-blue-600">
-                Create an account.
+                 Create an account.
               </Link>
             </div>
           </div>

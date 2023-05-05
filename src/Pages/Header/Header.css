@@ -4,27 +4,23 @@
 }
 
 .active {
-    background-color: #007bff;
+    background-color: #FE5320;
     color: #fff;
   }
   
 
-.logout{
-    background-color: #007bff;
+.btn-bg{
+    background-color: #FE5320;
+    border: none;
+    color: #fff;
+}
+.btn-bg:hover{
+    background-color: #c04d2a;
     color: #fff;
 }
 
 
 .title-logo{
-    background-color: #8f5656;
-    color: #ffffff;
-}
-.title-logo:hover{
-    background-color: #d48c8c;
-    color: #ffffff;
+    color: #FE5320;
 }
 
-.nav-bg{
-    margin-bottom: 4px;
-    background-color: #d48c8c;
-}

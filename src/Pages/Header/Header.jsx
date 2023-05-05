@@ -16,7 +16,6 @@ const Header = () => {
     setIsHovering(false);
   };
 
-  console.log(user || user);
 
   const handleLogOut = () => {
     logOut()
@@ -24,8 +23,9 @@ const Header = () => {
       .catch((error) => console.error(error));
   };
   return (
-    <div className="navbar nav-bg container mx-auto bg-base-100 py-2 sticky z-50 top-0">
-      <div className="navbar-start">
+    <div className="navbar sticky top-0 bg-base-300 z-50">
+      <div className="navbar container mx-auto">
+      <div className="navbar-start ">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
             <svg
@@ -45,10 +45,10 @@ const Header = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52  bg-white"
           >
             <NavLink
-              className={"px-4 py-1 text-white font-semibold rounded mr-4"}
+              className={"px-4 py-1 font-semibold rounded mr-4"}
               exact
               to="/"
               activeClassName="active"
@@ -56,20 +56,48 @@ const Header = () => {
               Home
             </NavLink>
             <NavLink
-              className={"px-4 py-1 text-white font-semibold rounded"}
+              className={"px-4 py-1 font-semibold rounded"}
               to="/blog"
               activeClassName="active"
             >
               Blog
             </NavLink>
+            <NavLink
+              className={"px-4 py-1 font-semibold rounded"}
+              to="/about"
+              activeClassName="active"
+            >
+              About
+            </NavLink>
+            <NavLink
+              className={"px-4 py-1 font-semibold rounded"}
+              to="/courses"
+              activeClassName="active"
+            >
+              Courses
+            </NavLink>
+            <NavLink
+              className={"px-4 py-1 font-semibold rounded"}
+              to="/pages"
+              activeClassName="active"
+            >
+              Pages
+            </NavLink>
+            <NavLink
+              className={"px-4 py-1 font-semibold rounded"}
+              to="/contact"
+              activeClassName="active"
+            >
+              Contact
+            </NavLink>
           </ul>
         </div>
-        <Link to="/" className="btn title-logo  btn-ghost font-bold text-xl md:text-4xl">COOKER</Link>
+        <Link to="/" className=" font-serif title-logo  font-bold text-xl md:text-5xl">C<span className="">OO</span>KER</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <NavLink
-            className={"px-4 py-1 text-white font-semibold rounded mr-4"}
+            className={"px-4 py-1 font-semibold rounded mr-4"}
             exact
             to="/"
             activeClassName="active"
@@ -77,12 +105,40 @@ const Header = () => {
             Home
           </NavLink>
           <NavLink
-            className={"px-4 text-white font-semibold py-1 rounded"}
+            className={"px-4  font-semibold py-1 rounded"}
             to="/blog"
             activeClassName="active"
           >
             Blog
           </NavLink>
+          <NavLink
+              className={"px-4 py-1  font-semibold rounded"}
+              to="/about"
+              activeClassName="active"
+            >
+              About
+            </NavLink>
+            <NavLink
+              className={"px-4 py-1  font-semibold rounded"}
+              to="/courses"
+              activeClassName="active"
+            >
+              Courses
+            </NavLink>
+            <NavLink
+              className={"px-4 py-1 font-semibold rounded"}
+              to="/pages"
+              activeClassName="active"
+            >
+              Pages
+            </NavLink>
+            <NavLink
+              className={"px-4 py-1 font-semibold rounded"}
+              to="/contact"
+              activeClassName="active"
+            >
+              Contact
+            </NavLink>
         </ul>
       </div>
       <div className="navbar-end">
@@ -108,7 +164,7 @@ const Header = () => {
             </div>
 
             <NavLink
-              to="/"
+              to="/login"
               onClick={handleLogOut}
               className="px-4 btn logout py-1 rounded"
             >
@@ -122,6 +178,7 @@ const Header = () => {
             </NavLink>
           </div>
         )}
+      </div>
       </div>
     </div>
   );
