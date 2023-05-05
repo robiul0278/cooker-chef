@@ -133,7 +133,7 @@ const Login = () => {
                 <button onClick={handleGoogle} className="btn bg-white hover:bg-gray-400 text-black md:w-44">
                   <FcGoogle className="mr-2"></FcGoogle> Google
                 </button>
-                <button onClick={handleGit} className="btn md:w-44 hover:bg-gray-400 bg-slate-600">
+                <button onClick={handleGit} className="btn md:w-44 bg-white hover:bg-gray-400 text-black">
                   <FaGithub className="mr-2"></FaGithub> GitHub
                 </button>
               </div>

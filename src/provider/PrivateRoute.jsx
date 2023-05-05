@@ -18,6 +18,7 @@ const PrivateRoute = ({ children }) => {
     glassColor = '#c0efff'
     color = '#e15b64'
   />
+
   }
   
   if(user) {
